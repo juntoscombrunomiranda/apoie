@@ -25,7 +25,7 @@ body {
 .top-logo {
   display: block;
   max-width: 300px;
-  width: 50%;
+  width: 70%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -173,8 +173,8 @@ body {
 /* Responsivo para celulares */
 @media (max-width: 480px) {
   .top-logo {
-    max-width: 200px;
-    width: 70%;
+    max-width: 260px;
+    width: 80%;
   }
 
   .title-container,
