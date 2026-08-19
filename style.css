@@ -24,8 +24,8 @@ body {
 /* Logo no topo */
 .top-logo {
   display: block;
-  max-width: 300px;
-  width: 70%;
+  max-width: 450px;
+  width: 80%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -81,12 +81,12 @@ body {
 }
 
 .frame-switch label {
-  padding: 0 15px;             /* reduzir padding horizontal */
-  height: 40px;                /* altura igual aos botões principais */
+  padding: 0 15px;
+  height: 40px;
   border: 2px solid #1e6dec;
-  border-radius: 5px;          /* mesma borda dos botões */
+  border-radius: 5px;
   color: #1e6dec;
-  font-weight: 500;            /* igual aos botões */
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   user-select: none;
@@ -129,7 +129,7 @@ body {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  height: 40px; /* uniformizar altura */
+  height: 40px;
 }
 
 #file-input {
@@ -160,9 +160,9 @@ body {
   pointer-events: none;
   z-index: 9999;
   transition: all 0.5s ease;
-  text-align: center;       /* centralizar texto */
-  white-space: nowrap;      /* evitar quebra de linha desnecessária */
-  max-width: 90%;           /* limitar largura no celular */
+  text-align: center;
+  white-space: nowrap;
+  max-width: 90%;
 }
 
 .notification.show {
@@ -173,8 +173,8 @@ body {
 /* Responsivo para celulares */
 @media (max-width: 480px) {
   .top-logo {
-    max-width: 260px;
-    width: 80%;
+    max-width: 320px;
+    width: 85%;
   }
 
   .title-container,
@@ -183,11 +183,16 @@ body {
     padding: 15px;
   }
 
-  .title-container h1 { font-size: 1.4rem; }
-  .title-container p { font-size: 0.9rem; }
+  .title-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .title-container p {
+    font-size: 0.9rem;
+  }
 
   .frame-switch label {
-    font-size: 0.9rem;  /* ajustar texto nos radios */
+    font-size: 0.9rem;
     padding: 0 10px;
     height: 36px;
   }
