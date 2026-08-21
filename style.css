@@ -229,7 +229,11 @@ body {
 
   justify-content: center;
 
+  align-items: center;
+
   gap: 10px;
+
+  flex-wrap: nowrap;
 }
 
 .controls button {
@@ -250,6 +254,10 @@ body {
   font-weight: 500;
 
   height: 40px;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
 }
 
 #file-input {
@@ -350,11 +358,19 @@ body {
     height: 36px;
   }
 
+  .controls {
+    gap: 8px;
+  }
+
   .controls button {
     height: 36px;
 
     font-size: 0.9rem;
 
-    padding: 8px 15px;
+    padding: 8px 12px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
   }
 }
