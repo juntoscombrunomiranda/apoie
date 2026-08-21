@@ -10,7 +10,7 @@ body {
   padding: 20px;
 
   /* Fundo gradiente animado */
-	background: linear-gradient(-30deg, #134191, #1865c4, #58caff, #134191);
+	background: linear-gradient(-30deg, #134191, #134191, #1865c4, #134191);
 	background-size: 500% 500%;
 	animation: gradient 10s ease infinite;
 	height: 100vh;
