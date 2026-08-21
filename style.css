@@ -1,83 +1,146 @@
-/* Fonte Montserrat */
+/* =========================================
+   CONFIGURAÇÃO GERAL
+   ========================================= */
+
 html {
   height: 100%;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
   margin: 0;
   min-height: 100vh;
   padding: 20px;
+
   box-sizing: border-box;
 
-  /* Fundo SVG animado */
   background-color: #005bcb;
-  background-image: url("data:image/svg+xml,%3Csvg preserveAspectRatio='xMidYMid slice' viewBox='10 10 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cstyle%3E%40keyframes%20rotate%7B0%25%7Btransform:rotate(0deg)%7D100%25%7Btransform:rotate(360deg)%7D%7D.out-top%7Banimation:rotate%2020s%20linear%20infinite;transform-origin:13px%2025px%7D.in-top%7Banimation:rotate%2010s%20linear%20infinite;transform-origin:13px%2025px%7D.out-bottom%7Banimation:rotate%2025s%20linear%20infinite;transform-origin:84px%2093px%7D.in-bottom%7Banimation:rotate%2015s%20linear%20infinite;transform-origin:84px%2093px%7D%3C/style%3E%3C/defs%3E%3Cpath%20fill='%230068e8'%20class='out-top'%20d='M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z'/%3E%3Cpath%20fill='%23005bcb'%20class='in-top'%20d='M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z'/%3E%3Cpath%20fill='%230068e8'%20class='out-bottom'%20d='M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z'/%3E%3Cpath%20fill='%23005bcb'%20class='in-bottom'%20d='M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z'/%3E%3C/svg%3E");
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Logo no topo */
+
+/* =========================================
+   FUNDO SVG ANIMADO
+   ========================================= */
+
+.background-svg {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   LOGO NO TOPO
+   ========================================= */
+
 .top-logo {
   display: block;
+
   max-width: 450px;
   width: 80%;
+
   height: auto;
+
   margin-bottom: 20px;
 }
 
-/* Container do título */
+
+/* =========================================
+   CONTAINER DO TÍTULO
+   ========================================= */
+
 .title-container {
   background-color: white;
+
   padding: 20px;
+
   border-radius: 10px;
+
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   width: 100%;
   max-width: 600px;
+
   text-align: center;
+
   margin-bottom: 20px;
+
   box-sizing: border-box;
 }
 
 .title-container h1 {
   font-weight: 900;
+
   font-size: 1.8rem;
+
   margin: 0 0 10px 0;
+
   color: #0030b5;
 }
 
 .title-container p {
   font-weight: 500;
+
   font-style: italic;
+
   font-size: 1rem;
+
   margin: 0;
+
   color: black;
 }
 
-/* Container do editor */
+
+/* =========================================
+   CONTAINER DO EDITOR
+   ========================================= */
+
 .container {
   background-color: white;
+
   padding: 20px;
+
   border-radius: 10px;
+
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   width: 100%;
   max-width: 600px;
+
   text-align: center;
+
   box-sizing: border-box;
 }
 
-/* Switch de moldura estilizado */
+
+/* =========================================
+   SWITCH DE MOLDURA
+   ========================================= */
+
 .frame-switch {
   display: flex;
+
   justify-content: center;
+
   gap: 10px;
+
   margin-bottom: 15px;
 }
 
@@ -87,53 +150,91 @@ body {
 
 .frame-switch label {
   padding: 0 15px;
+
   height: 40px;
+
   border: 2px solid #1e6dec;
+
   border-radius: 5px;
+
   color: #1e6dec;
+
   font-weight: 500;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
+
   user-select: none;
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   font-size: 1rem;
 }
 
 .frame-switch input[type="radio"]:checked + label {
   background-color: #1e6dec;
+
   color: white;
 }
 
-/* Canvas */
+
+/* =========================================
+   CANVAS
+   ========================================= */
+
 #canvas-container {
   position: relative;
+
   width: 100%;
+
   aspect-ratio: 1 / 1;
+
   margin: 20px auto;
+
   border: 2px dashed #ddd;
+
   border-radius: 10px;
+
   overflow: hidden;
+
   box-sizing: border-box;
 }
 
-/* Controles */
+
+/* =========================================
+   CONTROLES
+   ========================================= */
+
 .controls {
   display: flex;
+
   justify-content: center;
+
   gap: 10px;
 }
 
 .controls button {
   padding: 10px 20px;
+
   background-color: #0eb287;
+
   color: white;
+
   border: none;
+
   border-radius: 5px;
+
   cursor: pointer;
+
   font-family: 'Montserrat', sans-serif;
+
   font-weight: 500;
+
   height: 40px;
 }
 
@@ -143,49 +244,79 @@ body {
 
 #download {
   display: none;
+
   background-color: #1e6dec;
+
   color: white;
 }
 
-/* Notificação de sucesso */
+
+/* =========================================
+   NOTIFICAÇÃO DE SUCESSO
+   ========================================= */
+
 .notification {
   position: fixed;
+
   bottom: 20px;
   left: 50%;
+
   transform: translateX(-50%) translateY(100%);
+
   background-color: #8bd96c;
+
   color: white;
+
   padding: 15px 25px;
+
   border-radius: 10px;
+
   font-weight: 600;
+
   font-family: 'Montserrat', sans-serif;
+
   font-size: 1rem;
+
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   opacity: 0;
+
   pointer-events: none;
+
   z-index: 9999;
+
   transition: all 0.5s ease;
+
   text-align: center;
+
   white-space: nowrap;
+
   max-width: 90%;
 }
 
 .notification.show {
   transform: translateX(-50%) translateY(0);
+
   opacity: 1;
 }
 
-/* Responsivo para celulares */
+
+/* =========================================
+   RESPONSIVO PARA CELULARES
+   ========================================= */
+
 @media (max-width: 480px) {
 
   .top-logo {
     max-width: 320px;
+
     width: 85%;
   }
 
   .title-container,
   .container {
     max-width: 90%;
+
     padding: 15px;
   }
 
@@ -199,13 +330,17 @@ body {
 
   .frame-switch label {
     font-size: 0.9rem;
+
     padding: 0 10px;
+
     height: 36px;
   }
 
   .controls button {
     height: 36px;
+
     font-size: 0.9rem;
+
     padding: 8px 15px;
   }
 }
