@@ -332,7 +332,7 @@ fileInput.addEventListener('change', (e) => {
       frameLayer.draw();
       photoLayer.draw();
 
-      chooseFileBtn.textContent = 'Escolher outra foto';
+      chooseFileBtn.textContent = 'Escolher outra';
 
       downloadButton.style.display = 'inline-block';
 
