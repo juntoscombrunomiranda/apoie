@@ -1,4 +1,16 @@
 /* =========================================
+   FONTE PERSONALIZADA
+   ========================================= */
+
+@font-face {
+  font-family: 'SaoTorpes';
+  src: url('SaoTorpes.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* =========================================
    CONFIGURAÇÃO GERAL
    ========================================= */
 
@@ -86,13 +98,15 @@ body {
 }
 
 .title-container h1 {
-  font-weight: 900;
+  font-family: 'SaoTorpes', 'Montserrat', sans-serif;
+
+  font-weight: normal;
 
   font-size: 1.8rem;
 
   margin: 0 0 10px 0;
 
-  color: #0030b5;
+  color: #134191;
 }
 
 .title-container p {
