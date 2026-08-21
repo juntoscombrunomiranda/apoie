@@ -1,16 +1,4 @@
 /* =========================================
-   FONTE PERSONALIZADA
-   ========================================= */
-
-@font-face {
-  font-family: 'SaoTorpes';
-  src: url('SaoTorpes.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-/* =========================================
    CONFIGURAÇÃO GERAL
    ========================================= */
 
@@ -36,6 +24,18 @@ body {
 
   position: relative;
   overflow-x: hidden;
+}
+
+
+/* =========================================
+   FONTE PERSONALIZADA
+   ========================================= */
+
+@font-face {
+  font-family: 'SaoTorpes';
+  src: url('SaoTorpes.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -98,11 +98,11 @@ body {
 }
 
 .title-container h1 {
-  font-family: 'SaoTorpes', 'Montserrat', sans-serif;
+  font-family: 'SaoTorpes', sans-serif;
 
   font-weight: normal;
 
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   margin: 0 0 10px 0;
 
@@ -335,7 +335,7 @@ body {
   }
 
   .title-container h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .title-container p {
