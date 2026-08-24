@@ -13,6 +13,7 @@ let frameAzulImg, frameVerdeImg;
 
 // Criar notificação responsiva
 const notification = document.createElement('div');
+
 notification.style.position = 'fixed';
 notification.style.bottom = '20px';
 notification.style.left = '50%';
@@ -32,22 +33,30 @@ notification.style.wordWrap = 'break-word';
 
 // Ajustar padding e font-size conforme tamanho da tela
 const adjustNotificationStyle = () => {
+
   if (window.innerWidth <= 480) {
+
     notification.style.padding = '20px 15px';
     notification.style.fontSize = '1rem';
+
   } else {
+
     notification.style.padding = '15px 25px';
     notification.style.fontSize = '1rem';
+
   }
+
 };
 
 adjustNotificationStyle();
+
 window.addEventListener('resize', adjustNotificationStyle);
 
 document.body.appendChild(notification);
 
 // Função para mostrar notificação
 const showNotification = (msg, duration = 5000) => {
+
   notification.textContent = msg;
   notification.style.display = 'block';
   notification.style.opacity = '0';
@@ -58,6 +67,7 @@ const showNotification = (msg, duration = 5000) => {
   });
 
   setTimeout(() => {
+
     notification.style.opacity = '0';
 
     setTimeout(() => {
@@ -65,10 +75,25 @@ const showNotification = (msg, duration = 5000) => {
     }, 400);
 
   }, duration);
+
+};
+
+// Detectar iPhone/iPad
+const isIOS = () => {
+
+  return (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (
+      navigator.platform === 'MacIntel' &&
+      navigator.maxTouchPoints > 1
+    )
+  );
+
 };
 
 // Inicialização do canvas
 const initCanvas = () => {
+
   const containerSize = canvasContainer.offsetWidth;
 
   stage = new Konva.Stage({
@@ -79,12 +104,15 @@ const initCanvas = () => {
 
   // Sample layer (fundo)
   sampleLayer = new Konva.Layer();
+
   stage.add(sampleLayer);
 
   const sample = new Image();
+
   sample.src = 'sample.png';
 
   sample.onload = () => {
+
     const sampleImg = new Konva.Image({
       x: 0,
       y: 0,
@@ -96,10 +124,12 @@ const initCanvas = () => {
 
     sampleLayer.add(sampleImg);
     sampleLayer.draw();
+
   };
 
   // Photo layer (foto do usuário)
   photoLayer = new Konva.Layer();
+
   stage.add(photoLayer);
 
   transformer = new Konva.Transformer({
@@ -117,13 +147,16 @@ const initCanvas = () => {
 
   // Frame layer
   frameLayer = new Konva.Layer();
+
   stage.add(frameLayer);
 
   // Pré-carregar moldura AZUL
   const azulImg = new Image();
+
   azulImg.src = 'Twibbon-Bruno-Miranda-Azul.png';
 
   azulImg.onload = () => {
+
     frameAzulImg = new Konva.Image({
       x: 0,
       y: 0,
@@ -136,13 +169,16 @@ const initCanvas = () => {
 
     frameLayer.add(frameAzulImg);
     frameLayer.draw();
+
   };
 
   // Pré-carregar moldura VERDE
   const verdeImg = new Image();
+
   verdeImg.src = 'Twibbon-Bruno-Miranda-Verde.png';
 
   verdeImg.onload = () => {
+
     frameVerdeImg = new Konva.Image({
       x: 0,
       y: 0,
@@ -155,6 +191,7 @@ const initCanvas = () => {
 
     frameLayer.add(frameVerdeImg);
     frameLayer.draw();
+
   };
 
   // Overlay layer
@@ -163,9 +200,11 @@ const initCanvas = () => {
   stage.add(overlayLayer);
 
   const overlayStatic = new Image();
+
   overlayStatic.src = 'overlay.png';
 
   overlayStatic.onload = () => {
+
     const overlayImg = new Konva.Image({
       x: 0,
       y: 0,
@@ -177,10 +216,12 @@ const initCanvas = () => {
 
     overlayLayer.add(overlayImg);
     overlayLayer.draw();
+
   };
 
   // Zoom com scroll
   stage.on('wheel', (e) => {
+
     if (!photo) return;
 
     e.evt.preventDefault();
@@ -189,10 +230,18 @@ const initCanvas = () => {
     const pointer = stage.getPointerPosition();
 
     const scaleBy = 1.05;
-    const direction = e.evt.deltaY > 0 ? 1 / scaleBy : scaleBy;
+    const direction =
+      e.evt.deltaY > 0
+        ? 1 / scaleBy
+        : scaleBy;
 
-    photo.scaleX(photo.scaleX() * direction);
-    photo.scaleY(photo.scaleY() * direction);
+    photo.scaleX(
+      photo.scaleX() * direction
+    );
+
+    photo.scaleY(
+      photo.scaleY() * direction
+    );
 
     const mousePointTo = {
       x: (pointer.x - photo.x()) / oldScale,
@@ -210,7 +259,9 @@ const initCanvas = () => {
     );
 
     photoLayer.draw();
+
   });
+
 };
 
 // Switch de moldura
@@ -248,8 +299,11 @@ frameSwitch.forEach(input => {
 
 // Escolher arquivo
 chooseFileBtn.addEventListener('click', () => {
+
   fileInput.value = '';
+
   fileInput.click();
+
 });
 
 // Upload da foto
@@ -271,18 +325,29 @@ fileInput.addEventListener('change', (e) => {
 
       const containerSize = stage.width();
 
-      const scaleX = containerSize / img.width;
-      const scaleY = containerSize / img.height;
+      const scaleX =
+        containerSize / img.width;
 
-      const finalScale = Math.max(scaleX, scaleY);
+      const scaleY =
+        containerSize / img.height;
 
-      const finalWidth = img.width * finalScale;
-      const finalHeight = img.height * finalScale;
+      const finalScale =
+        Math.max(scaleX, scaleY);
 
-      const finalX = (containerSize - finalWidth) / 2;
-      const finalY = (containerSize - finalHeight) / 2;
+      const finalWidth =
+        img.width * finalScale;
+
+      const finalHeight =
+        img.height * finalScale;
+
+      const finalX =
+        (containerSize - finalWidth) / 2;
+
+      const finalY =
+        (containerSize - finalHeight) / 2;
 
       sampleLayer.destroyChildren();
+
       sampleLayer.draw();
 
       if (!photo) {
@@ -354,14 +419,19 @@ canvasContainer.addEventListener('touchmove', (e) => {
   const touch1 = e.touches[0];
   const touch2 = e.touches[1];
 
-  const dx = touch2.clientX - touch1.clientX;
-  const dy = touch2.clientY - touch1.clientY;
+  const dx =
+    touch2.clientX - touch1.clientX;
 
-  const distance = Math.sqrt(dx * dx + dy * dy);
+  const dy =
+    touch2.clientY - touch1.clientY;
+
+  const distance =
+    Math.sqrt(dx * dx + dy * dy);
 
   if (lastDistance) {
 
-    const scaleChange = distance / lastDistance;
+    const scaleChange =
+      distance / lastDistance;
 
     photo.scaleX(
       photo.scaleX() * scaleChange
@@ -412,21 +482,27 @@ canvasContainer.addEventListener('touchend', (e) => {
 
 });
 
-// Download JPG 100% e mostrar notificação
+// =====================================================
+// DOWNLOAD DA FOTO
+// =====================================================
+
 downloadButton.addEventListener('click', () => {
 
   if (!photo) return;
 
   const downloadSize = 800;
 
-  const mergedCanvas = document.createElement('canvas');
+  const mergedCanvas =
+    document.createElement('canvas');
 
   mergedCanvas.width = downloadSize;
   mergedCanvas.height = downloadSize;
 
-  const ctx = mergedCanvas.getContext('2d');
+  const ctx =
+    mergedCanvas.getContext('2d');
 
   ctx.fillStyle = '#ffffff';
+
   ctx.fillRect(
     0,
     0,
@@ -462,6 +538,7 @@ downloadButton.addEventListener('click', () => {
     scaleY * downloadSize
   );
 
+  // Moldura azul
   if (
     frameAzulImg &&
     frameAzulImg.visible()
@@ -477,6 +554,7 @@ downloadButton.addEventListener('click', () => {
 
   }
 
+  // Moldura verde
   if (
     frameVerdeImg &&
     frameVerdeImg.visible()
@@ -492,30 +570,166 @@ downloadButton.addEventListener('click', () => {
 
   }
 
-  const dataURL =
-    mergedCanvas.toDataURL(
-      'image/jpeg',
-      1.0
-    );
+  // ===================================================
+  // NOVO SISTEMA DE EXPORTAÇÃO
+  // ===================================================
 
-  const a = document.createElement('a');
+  mergedCanvas.toBlob(
+    async (blob) => {
 
-  a.href = dataURL;
+      if (!blob) {
 
-  a.download =
-    'Bruno-Miranda-foto-com-moldura.jpg';
+        showNotification(
+          'Não foi possível gerar a foto. Tente novamente.',
+          7000
+        );
 
-  a.click();
+        return;
 
-  // Notificação
-  showNotification(
-    'Foto baixada com sucesso! Compartilhe com os amigos!',
-    10000
+      }
+
+      const fileName =
+        'Bruno-Miranda-foto-com-moldura.jpg';
+
+      // ===============================================
+      // iPHONE / iPAD
+      // ===============================================
+
+      if (isIOS()) {
+
+        const file =
+          new File(
+            [blob],
+            fileName,
+            {
+              type: 'image/jpeg'
+            }
+          );
+
+        // Tentar usar o compartilhamento nativo do iOS
+        if (
+          navigator.share &&
+          navigator.canShare &&
+          navigator.canShare({
+            files: [file]
+          })
+        ) {
+
+          try {
+
+            await navigator.share({
+              files: [file],
+              title: 'Foto com moldura Bruno Miranda',
+              text: 'Minha foto com a moldura do Bruno Miranda!'
+            });
+
+            showNotification(
+              'Foto pronta! Escolha "Salvar Imagem" no menu de compartilhamento.',
+              10000
+            );
+
+            return;
+
+          } catch (error) {
+
+            // O usuário pode ter fechado o compartilhamento.
+            // Nesse caso, não fazemos nada.
+            if (
+              error &&
+              error.name === 'AbortError'
+            ) {
+
+              return;
+
+            }
+
+          }
+
+        }
+
+        // =============================================
+        // FALLBACK PARA SAFARI
+        // =============================================
+
+        const imageURL =
+          URL.createObjectURL(blob);
+
+        const newWindow =
+          window.open(
+            imageURL,
+            '_blank'
+          );
+
+        if (newWindow) {
+
+          showNotification(
+            'Sua foto está pronta! Toque e segure a imagem e escolha "Salvar em Fotos".',
+            12000
+          );
+
+        } else {
+
+          // Caso o Safari bloqueie a nova aba,
+          // tentamos navegar diretamente para a imagem.
+          window.location.href = imageURL;
+
+        }
+
+        // Não revogar imediatamente.
+        // O Safari precisa ter tempo para carregar a imagem.
+        setTimeout(() => {
+
+          URL.revokeObjectURL(imageURL);
+
+        }, 60000);
+
+        return;
+
+      }
+
+      // ===============================================
+      // COMPUTADOR / ANDROID
+      // ===============================================
+
+      const imageURL =
+        URL.createObjectURL(blob);
+
+      const a =
+        document.createElement('a');
+
+      a.href = imageURL;
+
+      a.download = fileName;
+
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+
+      // Liberar memória depois do download
+      setTimeout(() => {
+
+        URL.revokeObjectURL(imageURL);
+
+      }, 1000);
+
+      showNotification(
+        'Foto baixada com sucesso! Compartilhe com os amigos!',
+        10000
+      );
+
+    },
+    'image/jpeg',
+    1.0
   );
 
 });
 
-// Redimensionamento responsivo
+// =====================================================
+// REDIMENSIONAMENTO RESPONSIVO
+// =====================================================
+
 window.addEventListener('resize', () => {
 
   const newSize =
@@ -543,28 +757,35 @@ window.addEventListener('resize', () => {
     overlayLayer
       .getChildren()
       .forEach(img => {
+
         img.width(newSize);
         img.height(newSize);
+
       });
 
   }
 
   if (photo) {
 
-    const scale = Math.max(
-      newSize / photo.getImage().width,
-      newSize / photo.getImage().height
-    );
+    const scale =
+      Math.max(
+        newSize / photo.getImage().width,
+        newSize / photo.getImage().height
+      );
 
     photo.setAttrs({
 
       x:
-        (newSize -
-        photo.getImage().width * scale) / 2,
+        (
+          newSize -
+          photo.getImage().width * scale
+        ) / 2,
 
       y:
-        (newSize -
-        photo.getImage().height * scale) / 2,
+        (
+          newSize -
+          photo.getImage().height * scale
+        ) / 2,
 
       width:
         photo.getImage().width * scale,
@@ -584,8 +805,10 @@ window.addEventListener('resize', () => {
     sampleLayer
       .getChildren()
       .forEach(img => {
+
         img.width(newSize);
         img.height(newSize);
+
       });
 
   }
