@@ -196,19 +196,19 @@ BRUNO + MÁRIO
 ========================================= */
 
 .frame-switch label[for="bm"] {
-border: 2px solid #1e6dec;
+border: 2px solid #134191;
 
 background-color: white;
 
-color: #1e6dec;
+color: #134191;
 }
 
 /* Bruno + Mário selecionado */
 
 .frame-switch input#bm:checked + label {
-background-color: #1e6dec;
+background-color: #134191;
 
-border-color: #1e6dec;
+border-color: #134191c;
 
 color: white;
 }
@@ -219,19 +219,19 @@ color: white;
   ========================================= */
 
 .frame-switch label[for="bmk"] {
-border: 2px solid #0eb287;
+border: 2px solid #00945b;
 
 background-color: white;
 
-color: #0eb287;
+color: #00945b;
 }
 
 /* + Kalil selecionado */
 
 .frame-switch input#bmk:checked + label {
-background-color: #0eb287;
+background-color: #00945b7;
 
-border-color: #0eb287;
+border-color: #00945b;
 
 color: white;
 }
@@ -279,7 +279,7 @@ box-sizing: border-box;
 .controls button {
 padding: 10px 20px;
 
-background-color: #0eb287;
+background-color: #134191;
 
 color: white;
 
