@@ -208,7 +208,7 @@ const initCanvas = () => {
 
 
   // ===================================================
-  // MOLDURA BM
+  // MOLDURA BRUNO + MÁRIO
   // ===================================================
 
   const bmImg = new Image();
@@ -242,7 +242,7 @@ const initCanvas = () => {
 
 
   // ===================================================
-  // MOLDURA BMK
+  // MOLDURA + KALIL
   // ===================================================
 
   const bmkImg = new Image();
@@ -383,7 +383,8 @@ frameSwitch.forEach(input => {
     'change',
     () => {
 
-      if (input.value === 'azul') {
+      // Bruno + Mário
+      if (input.value === 'bm') {
 
         if (frameBMImg) {
 
@@ -397,7 +398,11 @@ frameSwitch.forEach(input => {
 
         }
 
-      } else {
+      }
+
+
+      // + Kalil
+      if (input.value === 'bmk') {
 
         if (frameBMImg) {
 
@@ -487,12 +492,16 @@ fileInput.addEventListener(
           finalScale;
 
         const finalX =
-          (containerSize -
-          finalWidth) / 2;
+          (
+            containerSize -
+            finalWidth
+          ) / 2;
 
         const finalY =
-          (containerSize -
-          finalHeight) / 2;
+          (
+            containerSize -
+            finalHeight
+          ) / 2;
 
 
         sampleLayer.destroyChildren();
@@ -638,15 +647,19 @@ canvasContainer.addEventListener(
 
 
       const centerX =
-        (touch1.clientX +
-        touch2.clientX) / 2 -
+        (
+          touch1.clientX +
+          touch2.clientX
+        ) / 2 -
         canvasContainer
           .getBoundingClientRect()
           .left;
 
       const centerY =
-        (touch1.clientY +
-        touch2.clientY) / 2 -
+        (
+          touch1.clientY +
+          touch2.clientY
+        ) / 2 -
         canvasContainer
           .getBoundingClientRect()
           .top;
@@ -659,16 +672,26 @@ canvasContainer.addEventListener(
 
       photo.x(
         centerX -
-        (centerX - photo.x()) *
-        (photo.scaleX() /
-        oldScale)
+        (
+          centerX -
+          photo.x()
+        ) *
+        (
+          photo.scaleX() /
+          oldScale
+        )
       );
 
       photo.y(
         centerY -
-        (centerY - photo.y()) *
-        (photo.scaleY() /
-        oldScale)
+        (
+          centerY -
+          photo.y()
+        ) *
+        (
+          photo.scaleY() /
+          oldScale
+        )
       );
 
     }
@@ -779,7 +802,7 @@ downloadButton.addEventListener(
 
 
     // =================================================
-    // MOLDURA BM
+    // MOLDURA BRUNO + MÁRIO
     // =================================================
 
     if (
@@ -803,7 +826,7 @@ downloadButton.addEventListener(
 
 
     // =================================================
-    // MOLDURA BMK
+    // MOLDURA + KALIL
     // =================================================
 
     if (
