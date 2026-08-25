@@ -1,3 +1,4 @@
+```css
 /* =========================================
    CONFIGURAÇÃO GERAL
    ========================================= */
@@ -173,6 +174,8 @@ body {
 
   color: #1e6dec;
 
+  background-color: white;
+
   font-family: 'Montserrat', sans-serif;
 
   font-weight: 500;
@@ -194,8 +197,23 @@ body {
   box-sizing: border-box;
 }
 
-/* Azul selecionado */
-.frame-switch input#azul:checked + label {
+
+/* =========================================
+   BOTÃO BRUNO + MÁRIO
+   ========================================= */
+
+.frame-switch label[for="bm"] {
+  border-color: #1e6dec;
+
+  color: #1e6dec;
+
+  background-color: white;
+}
+
+
+/* Bruno + Mário selecionado */
+
+.frame-switch input#bm:checked + label {
   background-color: #1e6dec;
 
   border-color: #1e6dec;
@@ -203,15 +221,23 @@ body {
   color: white;
 }
 
-/* Verde */
-.frame-switch label[for="verde"] {
+
+/* =========================================
+   BOTÃO + KALIL
+   ========================================= */
+
+.frame-switch label[for="bmk"] {
   border-color: #0eb287;
 
   color: #0eb287;
+
+  background-color: white;
 }
 
-/* Verde selecionado */
-.frame-switch input#verde:checked + label {
+
+/* + Kalil selecionado */
+
+.frame-switch input#bmk:checked + label {
   background-color: #0eb287;
 
   border-color: #0eb287;
@@ -407,3 +433,4 @@ body {
     white-space: nowrap;
   }
 }
+```
