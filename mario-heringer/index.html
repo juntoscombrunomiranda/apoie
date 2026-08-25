@@ -38,7 +38,6 @@
     content="https://juntoscombrunomiranda.github.io/apoie/mario-heringer/"
   >
 
-
   <!-- Twitter Card -->
   <meta
     name="twitter:card"
@@ -60,7 +59,6 @@
     content="https://juntoscombrunomiranda.github.io/apoie/mario-heringer/OG-Bruno-Miranda.jpg"
   >
 
-
   <!-- Favicon -->
   <link
     rel="icon"
@@ -68,17 +66,14 @@
     type="image/svg+xml"
   >
 
-
   <!-- Bibliotecas -->
   <script src="https://cdn.jsdelivr.net/npm/konva@8.4.3/konva.min.js"></script>
-
 
   <!-- Fonte Montserrat -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,500&display=swap"
     rel="stylesheet"
   >
-
 
   <!-- CSS -->
   <link
@@ -88,9 +83,7 @@
 
 </head>
 
-
 <body>
-
 
   <!-- =========================
        FUNDO ANIMADO SVG
@@ -119,7 +112,6 @@
 
         }
 
-
         .out-top {
 
           animation:
@@ -129,7 +121,6 @@
             13px 25px;
 
         }
-
 
         .in-top {
 
@@ -141,7 +132,6 @@
 
         }
 
-
         .out-bottom {
 
           animation:
@@ -151,7 +141,6 @@
             84px 93px;
 
         }
-
 
         .in-bottom {
 
@@ -167,13 +156,11 @@
 
     </defs>
 
-
     <path
       fill="#00bf75"
       class="out-top"
       d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"
     />
-
 
     <path
       fill="#00b871"
@@ -181,13 +168,11 @@
       d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"
     />
 
-
     <path
       fill="#00bf75"
       class="out-bottom"
       d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"
     />
-
 
     <path
       fill="#00b871"
@@ -199,14 +184,18 @@
 
 
   <!-- =========================
-       LOGO NO TOPO
+       CONTAINER DA LOGO
        ========================= -->
 
-  <img
-    src="Logo Bruno Mario.svg"
-    alt="Logo Bruno Miranda e Mário Heringer"
-    class="top-logo"
-  >
+  <div class="logo-container">
+
+    <img
+      src="Logo Bruno Mario.svg"
+      alt="Logo Bruno Miranda e Mário Heringer"
+      class="campaign-logo"
+    >
+
+  </div>
 
 
   <!-- =========================
@@ -232,12 +221,12 @@
 
   <div class="container">
 
-
     <!-- Switch de moldura -->
+
     <div class="frame-switch">
 
-
       <!-- Moldura Bruno + Mário -->
+
       <input
         type="radio"
         id="bm"
@@ -252,6 +241,7 @@
 
 
       <!-- Moldura Bruno + Mário + Kalil -->
+
       <input
         type="radio"
         id="bmk"
@@ -263,22 +253,21 @@
         + Kalil
       </label>
 
-
     </div>
 
 
     <!-- Canvas -->
+
     <div id="canvas-container"></div>
 
 
     <!-- Controles -->
-    <div class="controls">
 
+    <div class="controls">
 
       <button id="choose-file">
         Escolha sua foto
       </button>
-
 
       <input
         type="file"
@@ -286,14 +275,11 @@
         accept="image/*"
       >
 
-
       <button id="download">
         Baixar foto
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -303,7 +289,6 @@
        ========================= -->
 
   <script src="script.js"></script>
-
 
 </body>
 </html>
