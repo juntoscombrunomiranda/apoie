@@ -1,299 +1,471 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Bruno Miranda para Estadual e Mário Heringer para Federal!</title>
+/* =========================================
+CONFIGURAÇÃO GERAL
+========================================= */
 
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Adicione nossa moldura em sua foto de perfil e compartilhe!"
-  >
+html {
+  height: 100%;
+}
 
-  <!-- Open Graph Meta Tags -->
-  <meta
-    property="og:title"
-    content="Bruno Miranda para Estadual e Mário Heringer para Federal!"
-  >
+body {
+  font-family: 'Montserrat', sans-serif;
 
-  <meta
-    property="og:description"
-    content="Adicione nossa moldura em sua foto de perfil e compartilhe!"
-  >
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-  <meta
-    property="og:image"
-    content="https://juntoscombrunomiranda.github.io/apoie/mario-heringer/OG-Bruno-Miranda.jpg"
-  >
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  box-sizing: border-box;
 
-  <meta
-    property="og:url"
-    content="https://juntoscombrunomiranda.github.io/apoie/mario-heringer/"
-  >
+  background-color: #005bcb;
 
+  position: relative;
+  overflow-x: hidden;
+}
 
-  <!-- Twitter Card -->
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
 
-  <meta
-    name="twitter:title"
-    content="Bruno Miranda para Estadual e Mário Heringer para Federal!"
-  >
+/* =========================================
+FONTE PERSONALIZADA
+========================================= */
 
-  <meta
-    name="twitter:description"
-    content="Adicione nossa moldura em sua foto de perfil e compartilhe!"
-  >
+@font-face {
+  font-family: 'SaoTorpes';
+  src: url('SaoTorpes.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  <meta
-    name="twitter:image"
-    content="https://juntoscombrunomiranda.github.io/apoie/mario-heringer/OG-Bruno-Miranda.jpg"
-  >
 
+/* =========================================
+FUNDO SVG ANIMADO
+========================================= */
 
-  <!-- Favicon -->
-  <link
-    rel="icon"
-    href="Selo Vote.svg"
-    type="image/svg+xml"
-  >
+.background-svg {
+  position: fixed;
 
+  top: 0;
+  left: 0;
 
-  <!-- Bibliotecas -->
-  <script src="https://cdn.jsdelivr.net/npm/konva@8.4.3/konva.min.js"></script>
+  width: 100%;
+  height: 100vh;
 
+  z-index: -1;
 
-  <!-- Fonte Montserrat -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,500&display=swap"
-    rel="stylesheet"
-  >
+  pointer-events: none;
+}
 
 
-  <!-- CSS -->
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+/* =========================================
+CONTAINER DA LOGO
+========================================= */
 
-</head>
+.logo-container {
+  background-color: white;
 
+  padding: 20px;
 
-<body>
+  border-radius: 10px;
 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  <!-- =========================
-       FUNDO ANIMADO SVG
-       ========================= -->
+  width: 100%;
+  max-width: 600px;
 
- <svg
-  class="background-svg"
-  preserveAspectRatio="xMidYMid slice"
-  viewBox="10 10 80 80"
-  aria-hidden="true"
->
-  <defs>
-    <style>
+  box-sizing: border-box;
 
-      @keyframes rotate {
+  display: flex;
 
-        0% {
-          transform: rotate(0deg);
-        }
+  align-items: center;
+  justify-content: center;
 
-        100% {
-          transform: rotate(360deg);
-        }
+  margin-bottom: 20px;
+}
 
-      }
 
+/* =========================================
+LOGO MÁRIO + BRUNO
+========================================= */
 
-      .out-top {
+.campaign-logo {
+  display: block;
 
-        animation:
-          rotate 20s linear infinite;
+  width: 100%;
+  max-width: 540px;
 
-        transform-origin:
-          13px 25px;
+  height: auto;
+}
 
-      }
 
+/* =========================================
+CONTAINER DO TÍTULO
+========================================= */
 
-      .in-top {
+.title-container {
+  background-color: white;
 
-        animation:
-          rotate 10s linear infinite;
+  padding: 20px;
 
-        transform-origin:
-          13px 25px;
+  border-radius: 10px;
 
-      }
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+  width: 100%;
+  max-width: 600px;
 
-      .out-bottom {
+  text-align: center;
 
-        animation:
-          rotate 25s linear infinite;
+  margin-bottom: 20px;
 
-        transform-origin:
-          84px 93px;
+  box-sizing: border-box;
+}
 
-      }
+.title-container h1 {
+  font-family: 'SaoTorpes', sans-serif;
 
+  font-weight: normal;
 
-      .in-bottom {
+  font-size: 1.6rem;
 
-        animation:
-          rotate 15s linear infinite;
+  margin: 0 0 10px 0;
 
-        transform-origin:
-          84px 93px;
+  color: #134191;
+}
 
-      }
-    </style>
-  </defs>
+.title-container p {
+  font-weight: 500;
 
-  <path
-    fill="#00bf75"
-    class="out-top"
-    d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"
-  />
+  font-style: italic;
 
-  <path
-    fill="#00b871"
-    class="in-top"
-    d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"
-  />
+  font-size: 1rem;
 
-  <path
-    fill="#00bf75"
-    class="out-bottom"
-    d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"
-  />
+  margin: 0;
 
-  <path
-    fill="#00b871"
-    class="in-bottom"
-    d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"
-  />
-</svg>
+  color: black;
+}
 
-  <!-- =========================
-       LOGO NO TOPO
-       ========================= -->
 
-  <img
-    src="Logo-Bruno-Miranda.gif"
-    alt="Logo Bruno Miranda"
-    class="top-logo"
-  >
+/* =========================================
+CONTAINER DO EDITOR
+========================================= */
 
+.container {
+  background-color: white;
 
-  <!-- =========================
-       TÍTULO
-       ========================= -->
+  padding: 20px;
 
-  <div class="title-container">
+  border-radius: 10px;
 
-    <h1>
-      Apoie a nossa campanha!
-    </h1>
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    <p>
-      Adicione nossa moldura em sua foto de perfil e compartilhe!
-    </p>
+  width: 100%;
+  max-width: 600px;
 
-  </div>
+  text-align: center;
 
+  box-sizing: border-box;
+}
 
-  <!-- =========================
-       EDITOR DO TWIBBON
-       ========================= -->
 
-  <div class="container">
+/* =========================================
+SWITCH DE MOLDURA
+========================================= */
 
+.frame-switch {
+  display: flex;
 
-    <!-- Switch de moldura -->
-    <div class="frame-switch">
+  justify-content: center;
+  align-items: center;
 
+  gap: 10px;
 
-      <!-- Moldura Bruno + Mário -->
-      <input
-        type="radio"
-        id="bm"
-        name="frameOption"
-        value="bm"
-        checked
-      >
+  margin-bottom: 15px;
+}
 
-      <label for="bm">
-        Bruno + Mário
-      </label>
+.frame-switch input[type="radio"] {
+  display: none;
+}
 
 
-      <!-- Moldura Bruno + Mário + Kalil -->
-      <input
-        type="radio"
-        id="bmk"
-        name="frameOption"
-        value="bmk"
-      >
+/* =========================================
+ESTILO BASE DOS BOTÕES
+========================================= */
 
-      <label for="bmk">
-        + Kalil
-      </label>
+.frame-switch label {
+  padding: 0 15px;
 
+  height: 40px;
 
-    </div>
+  border-radius: 40px;
 
+  font-family: 'Montserrat', sans-serif;
 
-    <!-- Canvas -->
-    <div id="canvas-container"></div>
+  font-weight: 500;
 
+  cursor: pointer;
 
-    <!-- Controles -->
-    <div class="controls">
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 
+  user-select: none;
 
-      <button id="choose-file">
-        Escolha sua foto
-      </button>
+  display: inline-flex;
 
+  align-items: center;
+  justify-content: center;
 
-      <input
-        type="file"
-        id="file-input"
-        accept="image/*"
-      >
+  font-size: 1rem;
 
+  box-sizing: border-box;
+}
 
-      <button id="download">
-        Baixar foto
-      </button>
 
+/* =========================================
+BRUNO + MÁRIO
+========================================= */
 
-    </div>
+.frame-switch label[for="bm"] {
+  border: 2px solid #1e6dec;
 
+  background-color: white;
 
-  </div>
+  color: #1e6dec;
+}
 
 
-  <!-- =========================
-       SCRIPT DO TWIBBON
-       ========================= -->
+/* Bruno + Mário selecionado */
 
-  <script src="script.js"></script>
+.frame-switch input#bm:checked + label {
+  background-color: #1e6dec;
 
+  border-color: #1e6dec;
 
-</body>
-</html>
+  color: white;
+}
+
+
+/* =========================================
++ KALIL
+========================================= */
+
+.frame-switch label[for="bmk"] {
+  border: 2px solid #0eb287;
+
+  background-color: white;
+
+  color: #0eb287;
+}
+
+
+/* + Kalil selecionado */
+
+.frame-switch input#bmk:checked + label {
+  background-color: #0eb287;
+
+  border-color: #0eb287;
+
+  color: white;
+}
+
+
+/* =========================================
+CANVAS
+========================================= */
+
+#canvas-container {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  margin: 20px auto;
+
+  border: 2px dashed #ddd;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+CONTROLES
+========================================= */
+
+.controls {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.controls button {
+  padding: 10px 20px;
+
+  background-color: #0eb287;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-weight: 500;
+
+  font-size: 1rem;
+
+  height: 40px;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+}
+
+#file-input {
+  display: none;
+}
+
+#download {
+  display: none;
+
+  background-color: #1e6dec;
+
+  color: white;
+}
+
+
+/* =========================================
+NOTIFICAÇÃO DE SUCESSO
+========================================= */
+
+.notification {
+  position: fixed;
+
+  bottom: 20px;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(100%);
+
+  background-color: #8bd96c;
+
+  color: white;
+
+  padding: 15px 25px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 1rem;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  transition: all 0.5s ease;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  max-width: 90%;
+}
+
+.notification.show {
+  transform: translateX(-50%) translateY(0);
+
+  opacity: 1;
+}
+
+
+/* =========================================
+RESPONSIVO PARA CELULARES
+========================================= */
+
+@media (max-width: 480px) {
+
+  .logo-container {
+    max-width: 90%;
+
+    padding: 15px;
+  }
+
+  .campaign-logo {
+    width: 100%;
+  }
+
+  .title-container,
+  .container {
+    max-width: 90%;
+
+    padding: 15px;
+  }
+
+  .title-container h1 {
+    font-size: 1rem;
+  }
+
+  .title-container p {
+    font-size: 0.9rem;
+  }
+
+  .frame-switch {
+    gap: 8px;
+  }
+
+  .frame-switch label {
+    font-size: 0.9rem;
+
+    padding: 0 10px;
+
+    height: 36px;
+
+    border-radius: 36px;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  .controls button {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 36px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    padding: 8px 6px;
+
+    white-space: nowrap;
+  }
+}
