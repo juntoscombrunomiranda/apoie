@@ -74,36 +74,29 @@ body {
   width: 100%;
   max-width: 600px;
 
-  text-align: center;
-
-  margin-bottom: 20px;
-
   box-sizing: border-box;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
+
+  margin-bottom: 20px;
 }
 
 
 /* =========================================
-   LOGO DENTRO DO CONTAINER
+   LOGO
    ========================================= */
 
 .top-logo {
   display: block;
 
-  width: auto;
+  width: 85%;
 
-  max-width: 100%;
-
-  max-height: 70px;
+  max-width: 480px;
 
   height: auto;
-
-  object-fit: contain;
 }
 
 
@@ -227,7 +220,9 @@ body {
   box-sizing: border-box;
 }
 
+
 /* Azul selecionado */
+
 .frame-switch input#azul:checked + label {
   background-color: #1e6dec;
 
@@ -236,14 +231,18 @@ body {
   color: white;
 }
 
+
 /* Verde */
+
 .frame-switch label[for="verde"] {
   border-color: #0eb287;
 
   color: #0eb287;
 }
 
+
 /* Verde selecionado */
+
 .frame-switch input#verde:checked + label {
   background-color: #0eb287;
 
@@ -396,11 +395,9 @@ body {
   }
 
   .top-logo {
-    max-width: 100%;
+    max-width: 280px;
 
-    max-height: 55px;
-
-    width: auto;
+    width: 90%;
   }
 
   .title-container,
