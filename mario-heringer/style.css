@@ -1,472 +1,450 @@
 /* =========================================
-CONFIGURAÇÃO GERAL
-========================================= */
+   CONFIGURAÇÃO GERAL
+   ========================================= */
 
 html {
-height: 100%;
+  height: 100%;
 }
 
 body {
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-margin: 0;
-min-height: 100vh;
-padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 
-background-color: #00b871;
+  background-color: #005bcb;
 
-position: relative;
-overflow-x: hidden;
+  position: relative;
+  overflow-x: hidden;
 }
 
 
 /* =========================================
-FONTE PERSONALIZADA
-========================================= */
+   FONTE PERSONALIZADA
+   ========================================= */
 
 @font-face {
-font-family: 'SaoTorpes';
-src: url('SaoTorpes.otf') format('opentype');
-font-weight: normal;
-font-style: normal;
+  font-family: 'SaoTorpes';
+  src: url('SaoTorpes.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
 /* =========================================
-FUNDO SVG ANIMADO
-========================================= */
+   FUNDO SVG ANIMADO
+   ========================================= */
 
 .background-svg {
-position: fixed;
+  position: fixed;
 
-top: 0;
-left: 0;
+  top: 0;
+  left: 0;
 
-width: 100%;
-height: 100vh;
+  width: 100%;
+  height: 100vh;
 
-z-index: -1;
+  z-index: -1;
 
-pointer-events: none;
+  pointer-events: none;
 }
 
 
 /* =========================================
-CONTAINER DA LOGO
-========================================= */
+   CONTAINER DA LOGO
+   ========================================= */
 
 .logo-container {
-background-color: white;
+  background-color: white;
 
-padding: 20px;
+  padding: 20px;
 
-border-radius: 10px;
+  border-radius: 10px;
 
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-width: 100%;
-max-width: 600px;
+  width: 100%;
+  max-width: 600px;
 
-box-sizing: border-box;
+  text-align: center;
 
-display: flex;
+  margin-bottom: 20px;
 
-align-items: center;
-justify-content: center;
+  box-sizing: border-box;
 
-margin-bottom: 20px;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
 
 /* =========================================
-LOGO
-========================================= */
+   LOGO DENTRO DO CONTAINER
+   ========================================= */
 
 .top-logo {
-display: block;
+  display: block;
 
-width: 100%;
-max-width: 520px;
+  width: auto;
 
-height: auto;
+  max-width: 100%;
+
+  max-height: 70px;
+
+  height: auto;
+
+  object-fit: contain;
 }
 
 
 /* =========================================
-CONTAINER DO TÍTULO
-========================================= */
+   CONTAINER DO TÍTULO
+   ========================================= */
 
 .title-container {
-background-color: white;
+  background-color: white;
 
-padding: 20px;
+  padding: 20px;
 
-border-radius: 10px;
+  border-radius: 10px;
 
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-width: 100%;
-max-width: 600px;
+  width: 100%;
+  max-width: 600px;
 
-text-align: center;
+  text-align: center;
 
-margin-bottom: 20px;
+  margin-bottom: 20px;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .title-container h1 {
-font-family: 'SaoTorpes', sans-serif;
+  font-family: 'SaoTorpes', sans-serif;
 
-font-weight: normal;
+  font-weight: normal;
 
-font-size: 1.6rem;
+  font-size: 1.6rem;
 
-margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 
-color: #134191;
+  color: #134191;
 }
 
 .title-container p {
-font-weight: 500;
+  font-weight: 500;
 
-font-style: italic;
+  font-style: italic;
 
-font-size: 1rem;
+  font-size: 1rem;
 
-margin: 0;
+  margin: 0;
 
-color: black;
+  color: black;
 }
 
 
 /* =========================================
-CONTAINER DO EDITOR
-========================================= */
+   CONTAINER DO EDITOR
+   ========================================= */
 
 .container {
-background-color: white;
+  background-color: white;
 
-padding: 20px;
+  padding: 20px;
 
-border-radius: 10px;
+  border-radius: 10px;
 
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-width: 100%;
-max-width: 600px;
+  width: 100%;
+  max-width: 600px;
 
-text-align: center;
+  text-align: center;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
 /* =========================================
-SWITCH DE MOLDURA
-========================================= */
+   SWITCH DE MOLDURA
+   ========================================= */
 
 .frame-switch {
-display: flex;
+  display: flex;
 
-justify-content: center;
-align-items: center;
+  justify-content: center;
 
-gap: 10px;
+  gap: 10px;
 
-margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .frame-switch input[type="radio"] {
-display: none;
+  display: none;
 }
-
-
-/* =========================================
-ESTILO BASE DOS BOTÕES
-========================================= */
 
 .frame-switch label {
-padding: 0 15px;
+  padding: 0 15px;
 
-height: 40px;
+  height: 40px;
 
-border-radius: 40px;
+  border: 2px solid #1e6dec;
 
-font-family: 'Montserrat', sans-serif;
+  border-radius: 5px;
 
-font-weight: 500;
+  color: #1e6dec;
 
-cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 
-transition:
-background-color 0.3s ease,
-border-color 0.3s ease,
-color 0.3s ease;
+  font-weight: 500;
 
-user-select: none;
+  cursor: pointer;
 
-display: inline-flex;
+  transition: all 0.3s ease;
 
-align-items: center;
-justify-content: center;
+  user-select: none;
 
-font-size: 1rem;
+  display: inline-flex;
 
-box-sizing: border-box;
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 1rem;
+
+  box-sizing: border-box;
+}
+
+/* Azul selecionado */
+.frame-switch input#azul:checked + label {
+  background-color: #1e6dec;
+
+  border-color: #1e6dec;
+
+  color: white;
+}
+
+/* Verde */
+.frame-switch label[for="verde"] {
+  border-color: #0eb287;
+
+  color: #0eb287;
+}
+
+/* Verde selecionado */
+.frame-switch input#verde:checked + label {
+  background-color: #0eb287;
+
+  border-color: #0eb287;
+
+  color: white;
 }
 
 
 /* =========================================
-BRUNO + MÁRIO
-========================================= */
-
-.frame-switch label[for="bm"] {
-border: 2px solid #1865c4;
-
-background-color: white;
-
-color: #1865c4;
-}
-
-
-/* Bruno + Mário selecionado */
-
-.frame-switch input#bm:checked + label {
-background-color: #1865c4;
-
-border-color: #1865c4;
-
-color: white;
-}
-
-
-/* =========================================
-+ KALIL
-========================================= */
-
-.frame-switch label[for="bmk"] {
-border: 2px solid #00945b;
-
-background-color: white;
-
-color: #00945b;
-}
-
-
-/* + Kalil selecionado */
-
-.frame-switch input#bmk:checked + label {
-background-color: #00945b;
-
-border-color: #00945b;
-
-color: white;
-}
-
-
-/* =========================================
-CANVAS
-========================================= */
+   CANVAS
+   ========================================= */
 
 #canvas-container {
-position: relative;
+  position: relative;
 
-width: 100%;
+  width: 100%;
 
-aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
 
-margin: 20px auto;
+  margin: 20px auto;
 
-border: 2px dashed #ddd;
+  border: 2px dashed #ddd;
 
-border-radius: 10px;
+  border-radius: 10px;
 
-overflow: hidden;
+  overflow: hidden;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
 /* =========================================
-CONTROLES
-========================================= */
+   CONTROLES
+   ========================================= */
 
 .controls {
-display: flex;
+  display: flex;
 
-justify-content: center;
+  justify-content: center;
 
-align-items: center;
+  align-items: center;
 
-gap: 10px;
+  gap: 10px;
 
-width: 100%;
+  width: 100%;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .controls button {
-padding: 10px 20px;
+  padding: 10px 20px;
 
-background-color: #134191;
+  background-color: #0eb287;
 
-color: white;
+  color: white;
 
-border: none;
+  border: none;
 
-border-radius: 5px;
+  border-radius: 5px;
 
-cursor: pointer;
+  cursor: pointer;
 
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
-font-weight: 500;
+  font-weight: 500;
 
-font-size: 1rem;
+  font-size: 1rem;
 
-height: 40px;
+  height: 40px;
 
-white-space: nowrap;
+  white-space: nowrap;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #file-input {
-display: none;
+  display: none;
 }
 
 #download {
-display: none;
+  display: none;
 
-background-color: #1e6dec;
+  background-color: #1e6dec;
 
-color: white;
+  color: white;
 }
 
 
 /* =========================================
-NOTIFICAÇÃO DE SUCESSO
-========================================= */
+   NOTIFICAÇÃO DE SUCESSO
+   ========================================= */
 
 .notification {
-position: fixed;
+  position: fixed;
 
-bottom: 20px;
-left: 50%;
+  bottom: 20px;
+  left: 50%;
 
-transform: translateX(-50%) translateY(100%);
+  transform: translateX(-50%) translateY(100%);
 
-background-color: #8bd96c;
+  background-color: #8bd96c;
 
-color: white;
+  color: white;
 
-padding: 15px 25px;
+  padding: 15px 25px;
 
-border-radius: 10px;
+  border-radius: 10px;
 
-font-weight: 600;
+  font-weight: 600;
 
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
-font-size: 1rem;
+  font-size: 1rem;
 
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-opacity: 0;
+  opacity: 0;
 
-pointer-events: none;
+  pointer-events: none;
 
-z-index: 9999;
+  z-index: 9999;
 
-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 
-text-align: center;
+  text-align: center;
 
-white-space: nowrap;
+  white-space: nowrap;
 
-max-width: 90%;
+  max-width: 90%;
 }
 
 .notification.show {
-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
 
-opacity: 1;
+  opacity: 1;
 }
 
 
 /* =========================================
-RESPONSIVO PARA CELULARES
-========================================= */
+   RESPONSIVO PARA CELULARES
+   ========================================= */
 
 @media (max-width: 480px) {
 
-.logo-container {
-max-width: 90%;
+  .logo-container {
+    max-width: 90%;
 
-padding: 15px;
-}
+    padding: 15px;
+  }
 
-.top-logo {
-width: 100%;
+  .top-logo {
+    max-width: 100%;
 
-max-width: 320px;
-}
+    max-height: 55px;
 
-.title-container,
-.container {
-max-width: 90%;
+    width: auto;
+  }
 
-padding: 15px;
-}
+  .title-container,
+  .container {
+    max-width: 90%;
 
-.title-container h1 {
-font-size: 1.0rem;
-}
+    padding: 15px;
+  }
 
-.title-container p {
-font-size: 0.9rem;
-}
+  .title-container h1 {
+    font-size: 1.0rem;
+  }
 
-.frame-switch {
-gap: 8px;
-}
+  .title-container p {
+    font-size: 0.9rem;
+  }
 
-.frame-switch label {
-font-size: 0.9rem;
+  .frame-switch label {
+    font-size: 0.9rem;
 
-padding: 0 10px;
+    padding: 0 10px;
 
-height: 36px;
-}
+    height: 36px;
+  }
 
-.controls {
-gap: 8px;
-}
+  .controls {
+    gap: 8px;
+  }
 
-.controls button {
-flex: 1;
+  .controls button {
+    flex: 1;
 
-min-width: 0;
+    min-width: 0;
 
-height: 36px;
+    height: 36px;
 
-font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
-font-size: 0.9rem;
+    font-size: 0.9rem;
 
-font-weight: 500;
+    font-weight: 500;
 
-padding: 8px 6px;
+    padding: 8px 6px;
 
-white-space: nowrap;
-}
-
+    white-space: nowrap;
+  }
 }
