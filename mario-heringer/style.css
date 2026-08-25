@@ -26,6 +26,7 @@ position: relative;
 overflow-x: hidden;
 }
 
+
 /* =========================================
 FONTE PERSONALIZADA
 ========================================= */
@@ -36,6 +37,7 @@ src: url('SaoTorpes.otf') format('opentype');
 font-weight: normal;
 font-style: normal;
 }
+
 
 /* =========================================
 FUNDO SVG ANIMADO
@@ -55,20 +57,47 @@ z-index: -1;
 pointer-events: none;
 }
 
+
 /* =========================================
-LOGO NO TOPO
+CONTAINER DA LOGO
+========================================= */
+
+.logo-container {
+background-color: white;
+
+padding: 20px;
+
+border-radius: 10px;
+
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+width: 100%;
+max-width: 600px;
+
+box-sizing: border-box;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+margin-bottom: 20px;
+}
+
+
+/* =========================================
+LOGO
 ========================================= */
 
 .top-logo {
 display: block;
 
-max-width: 420px;
-width: 80%;
+width: 100%;
+max-width: 520px;
 
 height: auto;
-
-margin-bottom: 20px;
 }
+
 
 /* =========================================
 CONTAINER DO TÍTULO
@@ -117,6 +146,7 @@ margin: 0;
 color: black;
 }
 
+
 /* =========================================
 CONTAINER DO EDITOR
 ========================================= */
@@ -138,6 +168,7 @@ text-align: center;
 box-sizing: border-box;
 }
 
+
 /* =========================================
 SWITCH DE MOLDURA
 ========================================= */
@@ -156,6 +187,7 @@ margin-bottom: 15px;
 .frame-switch input[type="radio"] {
 display: none;
 }
+
 
 /* =========================================
 ESTILO BASE DOS BOTÕES
@@ -191,6 +223,7 @@ font-size: 1rem;
 box-sizing: border-box;
 }
 
+
 /* =========================================
 BRUNO + MÁRIO
 ========================================= */
@@ -203,6 +236,7 @@ background-color: white;
 color: #1865c4;
 }
 
+
 /* Bruno + Mário selecionado */
 
 .frame-switch input#bm:checked + label {
@@ -213,10 +247,10 @@ border-color: #1865c4;
 color: white;
 }
 
-/* =========================================
 
-* KALIL
-  ========================================= */
+/* =========================================
++ KALIL
+========================================= */
 
 .frame-switch label[for="bmk"] {
 border: 2px solid #00945b;
@@ -225,6 +259,7 @@ background-color: white;
 
 color: #00945b;
 }
+
 
 /* + Kalil selecionado */
 
@@ -235,6 +270,7 @@ border-color: #00945b;
 
 color: white;
 }
+
 
 /* =========================================
 CANVAS
@@ -257,6 +293,7 @@ overflow: hidden;
 
 box-sizing: border-box;
 }
+
 
 /* =========================================
 CONTROLES
@@ -314,6 +351,7 @@ background-color: #1e6dec;
 color: white;
 }
 
+
 /* =========================================
 NOTIFICAÇÃO DE SUCESSO
 ========================================= */
@@ -363,29 +401,30 @@ transform: translateX(-50%) translateY(0);
 opacity: 1;
 }
 
+
 /* =========================================
 RESPONSIVO PARA CELULARES
 ========================================= */
 
 @media (max-width: 480px) {
 
+.logo-container {
+max-width: 90%;
+
+padding: 15px;
+}
+
 .top-logo {
+width: 100%;
+
 max-width: 320px;
-
-```
-width: 85%;
-```
-
 }
 
 .title-container,
 .container {
 max-width: 90%;
 
-```
 padding: 15px;
-```
-
 }
 
 .title-container h1 {
@@ -403,12 +442,9 @@ gap: 8px;
 .frame-switch label {
 font-size: 0.9rem;
 
-```
 padding: 0 10px;
 
 height: 36px;
-```
-
 }
 
 .controls {
@@ -418,7 +454,6 @@ gap: 8px;
 .controls button {
 flex: 1;
 
-```
 min-width: 0;
 
 height: 36px;
@@ -432,7 +467,6 @@ font-weight: 500;
 padding: 8px 6px;
 
 white-space: nowrap;
-```
-
 }
+
 }
