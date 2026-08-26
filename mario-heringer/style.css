@@ -251,7 +251,7 @@ body {
 .frame-switch input#bm:checked + label {
   background-color: #134191;
 
-  border-color: #134191c;
+  border-color: #134191;
 
   color: white;
 }
